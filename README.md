@@ -1,5 +1,5 @@
 # LinuxStudy 
-## Linux应用层学习 
+## Linux Application
 ### （需要补全）
-## Linux驱动层学习 
+## Linux Driver
 ### 内容
