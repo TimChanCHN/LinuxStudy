@@ -1,5 +1,5 @@
 # LinuxStudy 
-## 1, Linux Application
+## 1 Linux Application
 
 1. [Linux简要概述](https://github.com/TimChanCHN/LinuxStudy/blob/master/LinuxApplication/Linux%E7%AE%80%E8%A6%81%E6%A6%82%E8%BF%B0)
 1. [Linux基本命令](https://github.com/TimChanCHN/LinuxStudy/blob/master/LinuxApplication/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4)
@@ -14,7 +14,7 @@
 1. [网络编程](https://github.com/TimChanCHN/LinuxStudy/blob/master/LinuxApplication/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B)
 1. [其他（时间获取）](https://github.com/TimChanCHN/LinuxStudy/blob/master/LinuxApplication/%E5%85%B6%E4%BB%96%EF%BC%88%E6%97%B6%E9%97%B4%E8%8E%B7%E5%8F%96%EF%BC%89)
 
-## 2, Linux Driver
+## 2 Linux Driver
 ### 2.1 系统移植
 
 1. [uboot移植](https://github.com/TimChanCHN/LinuxStudy/blob/master/LinuxDriver/%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/uboot%E7%A7%BB%E6%A4%8D)
