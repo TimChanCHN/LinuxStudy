@@ -31,4 +31,4 @@
 1. [标准字符设备编程](https://github.com/TimChanCHN/LinuxStudy/blob/master/LinuxDriver/%E5%9D%97%E8%AE%BE%E5%A4%87/%E6%A0%87%E5%87%86%E5%AD%97%E7%AC%A6%E8%AE%BE%E5%A4%87)
 
 # 附录
-1. [SourceInsight使用技巧](https://github.com/TimChanCHN/LinuxStudy/blob/master/%E9%99%84%E5%BD%95/SourceInsight%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7)
+1. [SourceInsight使用技巧](https://github.com/TimChanCHN/LinuxStudy/blob/master/%E9%99%84%E5%BD%95/SourceInsight%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7.md)
