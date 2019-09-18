@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-15 22:58:56
- * @LastEditTime: 2019-09-18 00:05:20
+ * @LastEditTime: 2019-09-19 00:20:27
  * @LastEditors: Please set LastEditors
  -->
 # LinuxStudy 
@@ -37,7 +37,9 @@
 5. [标准字符设备](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/2%E5%86%85%E6%A0%B8%E5%BC%80%E5%8F%91/5%E6%A0%87%E5%87%86%E5%AD%97%E7%AC%A6%E8%AE%BE%E5%A4%87.md) 
 
 ### 2.3 Linux外部中断
-1. [中断开发](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/3%E4%B8%AD%E6%96%AD/1%E4%B8%AD%E6%96%AD.md)
+1. [外部中断开发](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/3%E4%B8%AD%E6%96%AD/1%E4%B8%AD%E6%96%AD.md)
+2. [内核定时器](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/3%E4%B8%AD%E6%96%AD/2%E5%86%85%E6%A0%B8%E5%AE%9A%E6%97%B6%E5%99%A8.md)
+3. [中断底半部](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/3%E4%B8%AD%E6%96%AD/3%E4%B8%AD%E6%96%AD%E5%BA%95%E5%8D%8A%E9%83%A8.md)
 
 # 附录
 1. [SourceInsight使用技巧](https://github.com/TimChanCHN/LinuxStudy/blob/master/%E9%99%84%E5%BD%95/SourceInsight%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7.md)
