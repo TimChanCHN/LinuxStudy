@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-25 21:35:46
- * @LastEditTime: 2019-09-29 01:00:42
+ * @LastEditTime: 2019-09-29 16:20:20
  * @LastEditors: Please set LastEditors
  -->
 # IIC子系统
@@ -21,7 +21,7 @@
    >停止控制位： SCL为高电平，SDA为上升沿
 
 4. 读写操作
-   > SCL=0, 写操作
+   > SCL=0, 写操作  
    > SCL=1, 读操作
 
 5. 相应信号
@@ -36,6 +36,8 @@
    > 1. 输入读命令后，输入待写设备的地址，并等待回应；
    > 2. 输入待写数据，等待回应信号  
    ![IIC对芯片写操作](https://github.com/TimChanCHN/pictures/raw/master/Linux/IIC%E5%86%99%E6%93%8D%E4%BD%9C.png)
+
+备注： IIC只能操作8位数据。
 
 
 ## 2 IIC子系统
@@ -85,7 +87,9 @@
     // i2c总线对应的适配器结构体首地址
 
     ```
-    > 备注： 为了节省CPU资源，在注册完i2c客户端之后，利用函数`i2c_put_adapter`释放该适配器的索引.
+    > 备注：  
+    > 1. 为了节省CPU资源，在注册完i2c客户端之后，利用函数`i2c_put_adapter`释放该适配器的索引;
+    > 2. 客户端结构体不需要手动赋值，由注册函数获得。
     
     4. 客户端注册方法
        1. 函数`i2c_register_board_info()`
@@ -97,10 +101,6 @@
             ```c
             struct i2c_client*  i2c_new_device(struct i2c_adapter *adap, struct i2c_board_info const *info);
             ```
-            注销函数：
-            ```c
-            void  i2c_unregister_device(struct i2c_client *client);
-            ```
             
         3. 函数`i2c_new_probed_device()`
             > 往指定的适配器上注册一个i2c客户端。 如果i2c从设备的参数信息了解不充分，不知道i2c从设备的器件地址。这时可以提供一个可能的器件地址列表，调用该函数，从器件地址列表中校验每一个器件地址，直到找到第一个有效地址。
@@ -109,6 +109,19 @@
             ```
             例子：echo  eeprom  0x50  >  /sys/bus/i2c/devices/i2c-3/new_device
             ```
+            
+         注销函数：
+        ```c
+        void  i2c_unregister_device(struct i2c_client *client);
+        ```
+    > 备注：  
+    > 当客户端注册成功后，设备信息结构体`i2c_board_info`的信息会被赋值到客户端结构体`i2c_client`中。  
+    > 其中数据对应关系如下，在应用层中可以直接调用
+    > i2c_board_info.type           -->  i2c_client.name  
+    > i2c_board_info.addr           -->  i2c_client.addr
+    > i2c_board_info.platform_data  -->  i2c_client.dev.platform_data
+
+
 ## 4 IIC驱动端
 1. 作用
    1. 提供一个客户端名称匹配列表，和客户端进行比较匹配；
@@ -134,10 +147,17 @@
 
    ```
 
-3. 驱动端注册函数：i2c_register_driver()
+   3. 驱动端注册函数： `i2c_register_driver`
    ```c
     int  i2c_register_driver(struct module* owner,  struct i2c_driver* driver)
    ```
+    注销函数：  `i2c_del_driver` 
+    ```c
+    void  i2c_del_driver(struct i2c_driver *driver);
+    
+    ```
+
+
 4. 相关的读写接口函数
    ```c
     //快速读写：
@@ -160,5 +180,6 @@
     `i2c_smbus_xfer` -->所有的i2c读写函数都是在该函数基础上封装得到的  
     `i2c_transfer`-->用来实现连续读操作（以msg数组的方式连续读）
 
-
-            
+备注：  
+当i2c的客户端和驱动端成功匹配后（如同平台设备驱动），会自动产生对应的模块，进入iic的probe函数中。而对iic设备的读写，  
+可以在probe函数中进行。            
