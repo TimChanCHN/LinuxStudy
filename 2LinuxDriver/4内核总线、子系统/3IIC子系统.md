@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-25 21:35:46
- * @LastEditTime: 2019-09-29 16:20:20
+ * @LastEditTime: 2019-10-03 17:08:31
  * @LastEditors: Please set LastEditors
  -->
 # IIC子系统
@@ -14,6 +14,7 @@
 
 2. IIC的地址一般为8位
    > 以24ATCxx为例，其地址格式为1010A0A1A2R/W, 1010为固件地址，A0A1A2为可编程寻址，R/W为读写控制位
+   > 在写Linux IIC子系统时，最低一位要被忽略，否则无效。
 
 3. IIC初始化、起始、停止控制
    >初始化： SDA/SCL均为高电平  
@@ -28,16 +29,20 @@
    > 当数据发送结束后，主机会从输出变成输入，用于检测回应信号。若从机接收到信号后，会发出一个低电平，主机则检测该回应信号（此时SCL应该为高电平）。
 
 6. IIC对芯片的读操作
-   >  1. 输入写命令后，输入待读设备的地址，并等待回应；  
-   >  2. 输入读命令后，等待接收IIC总线上的数据  
+   >  1. IIC主机先写从机地址，设置为写模式，并等待回应（LSB:W）；
+   >  2. 写入要读的片内地址；
+   >  3. 再写从机地址，设置为读模式，并等待回应（LSB:R）;
+   >  4. 存储读取的数据 
    ![IIC对芯片读操作](https://github.com/TimChanCHN/pictures/raw/master/Linux/IIC%E8%AF%BB%E6%93%8D%E4%BD%9C.png)
 
 7. IIC对芯片的写操作
-   > 1. 输入读命令后，输入待写设备的地址，并等待回应；
-   > 2. 输入待写数据，等待回应信号  
+   > 1. IIC主机先写从机地址，设置为写模式，并等待回应（LSB:W）；
+   > 2. 输入待写数据的片内地址；
+   > 3. 输入待写数据
    ![IIC对芯片写操作](https://github.com/TimChanCHN/pictures/raw/master/Linux/IIC%E5%86%99%E6%93%8D%E4%BD%9C.png)
 
-备注： IIC只能操作8位数据。
+备注：
+1. IIC只能操作8位数据，所以当设备地址超过8位时，需要发送两次，根据平台的大小端，来确定发送地址顺序。
 
 
 ## 2 IIC子系统
