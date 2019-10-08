@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-15 22:58:56
- * @LastEditTime: 2019-10-08 10:52:08
+ * @LastEditTime: 2019-10-08 10:54:20
  * @LastEditors: Please set LastEditors
  -->
 # LinuxStudy （开发平台RK3399）
@@ -48,6 +48,9 @@
 2. [输入子系统](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/4%E5%86%85%E6%A0%B8%E6%80%BB%E7%BA%BF%E3%80%81%E5%AD%90%E7%B3%BB%E7%BB%9F/2%E8%BE%93%E5%85%A5%E5%AD%90%E7%B3%BB%E7%BB%9F.md)
 3. [IIC子系统](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/4%E5%86%85%E6%A0%B8%E6%80%BB%E7%BA%BF%E3%80%81%E5%AD%90%E7%B3%BB%E7%BB%9F/3IIC%E5%AD%90%E7%B3%BB%E7%BB%9F.md)
 4. [LCD子系统](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/4%E5%86%85%E6%A0%B8%E6%80%BB%E7%BA%BF%E3%80%81%E5%AD%90%E7%B3%BB%E7%BB%9F/4LCD%E9%A9%B1%E5%8A%A8.md)
+
+### 2.5 设备树开发
+1. [设备树](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/5%E8%AE%BE%E5%A4%87%E6%A0%91%E5%BC%80%E5%8F%91%E3%80%81%E9%A9%B1%E5%8A%A8%E7%A7%BB%E6%A4%8D%E3%80%81%E4%BA%A7%E5%93%81%E5%8F%91%E5%B8%83%E3%80%81%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/1%E8%AE%BE%E5%A4%87%E6%A0%91.md)
 
 # 附录
 1. [SourceInsight使用技巧](https://github.com/TimChanCHN/LinuxStudy/blob/master/%E9%99%84%E5%BD%95/SourceInsight%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7.md)
