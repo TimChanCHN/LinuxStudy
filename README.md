@@ -2,10 +2,10 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-15 22:58:56
- * @LastEditTime: 2019-09-19 00:20:27
+ * @LastEditTime: 2019-10-08 10:52:08
  * @LastEditors: Please set LastEditors
  -->
-# LinuxStudy 
+# LinuxStudy （开发平台RK3399）
 ## 1 Linux Application
 
 1. [Linux简要概述]()  
@@ -36,10 +36,18 @@
 4. [早期字符字符设备](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/2%E5%86%85%E6%A0%B8%E5%BC%80%E5%8F%91/4%E6%97%A9%E6%9C%9F%E5%AD%97%E7%AC%A6%E8%AE%BE%E5%A4%87.md) 
 5. [标准字符设备](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/2%E5%86%85%E6%A0%B8%E5%BC%80%E5%8F%91/5%E6%A0%87%E5%87%86%E5%AD%97%E7%AC%A6%E8%AE%BE%E5%A4%87.md) 
 
-### 2.3 Linux外部中断
+### 2.3 Linux内核机制
 1. [外部中断开发](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/3%E4%B8%AD%E6%96%AD/1%E4%B8%AD%E6%96%AD.md)
 2. [内核定时器](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/3%E4%B8%AD%E6%96%AD/2%E5%86%85%E6%A0%B8%E5%AE%9A%E6%97%B6%E5%99%A8.md)
 3. [中断底半部](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/3%E4%B8%AD%E6%96%AD/3%E4%B8%AD%E6%96%AD%E5%BA%95%E5%8D%8A%E9%83%A8.md)
+4. [poll机制](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/3%E5%86%85%E6%A0%B8%E6%9C%BA%E5%88%B6/4poll%E8%BD%AE%E8%AF%A2.md)
+5. [fasync](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/3%E5%86%85%E6%A0%B8%E6%9C%BA%E5%88%B6/5fasync%E6%9C%BA%E5%88%B6.md)
+
+### 2.4 内核总线、子系统
+1. [平台设备驱动](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/4%E5%86%85%E6%A0%B8%E6%80%BB%E7%BA%BF%E3%80%81%E5%AD%90%E7%B3%BB%E7%BB%9F/1%E5%B9%B3%E5%8F%B0%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8.md)
+2. [输入子系统](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/4%E5%86%85%E6%A0%B8%E6%80%BB%E7%BA%BF%E3%80%81%E5%AD%90%E7%B3%BB%E7%BB%9F/2%E8%BE%93%E5%85%A5%E5%AD%90%E7%B3%BB%E7%BB%9F.md)
+3. [IIC子系统](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/4%E5%86%85%E6%A0%B8%E6%80%BB%E7%BA%BF%E3%80%81%E5%AD%90%E7%B3%BB%E7%BB%9F/3IIC%E5%AD%90%E7%B3%BB%E7%BB%9F.md)
+4. [LCD子系统](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/4%E5%86%85%E6%A0%B8%E6%80%BB%E7%BA%BF%E3%80%81%E5%AD%90%E7%B3%BB%E7%BB%9F/4LCD%E9%A9%B1%E5%8A%A8.md)
 
 # 附录
 1. [SourceInsight使用技巧](https://github.com/TimChanCHN/LinuxStudy/blob/master/%E9%99%84%E5%BD%95/SourceInsight%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7.md)
