@@ -2,24 +2,24 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-15 22:58:56
- * @LastEditTime: 2019-10-08 10:54:20
+ * @LastEditTime: 2019-10-21 20:03:28
  * @LastEditors: Please set LastEditors
  -->
 # LinuxStudy （开发平台RK3399）
 ## 1 Linux Application
 
-1. [Linux简要概述]()  
-2. [Linux基本命令]() 
-3. [shell脚本]() 
-4. [库制作]() 
-5. [Makefile]() 
-6. [标准IO]() 
-7. [文件IO]() 
-8. [进程]() 
-9. [信号]() 
-10. [线程]() 
-11. [网络编程]() 
-12. [其他（时间获取）]() 
+1. [Linux简要概述](https://github.com/TimChanCHN/LinuxStudy/blob/master/1LinuxApplication/Linux%E7%AE%80%E8%A6%81%E6%A6%82%E8%BF%B0.md)  
+2. [Linux基本命令](https://github.com/TimChanCHN/LinuxStudy/blob/master/1LinuxApplication/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4.md) 
+3. [shell脚本](https://github.com/TimChanCHN/LinuxStudy/blob/master/1LinuxApplication/shell%E8%84%9A%E6%9C%AC.md) 
+4. [库制作](https://github.com/TimChanCHN/LinuxStudy/blob/master/1LinuxApplication/%E5%BA%93%E5%88%B6%E4%BD%9C.md) 
+5. [Makefile](https://github.com/TimChanCHN/LinuxStudy/blob/master/1LinuxApplication/Makefile.md) 
+6. [标准IO](https://github.com/TimChanCHN/LinuxStudy/blob/master/1LinuxApplication/%E6%A0%87%E5%87%86IO.md) 
+7. [文件IO](https://github.com/TimChanCHN/LinuxStudy/blob/master/1LinuxApplication/%E6%96%87%E4%BB%B6IO.md) 
+8. [进程](https://github.com/TimChanCHN/LinuxStudy/blob/master/1LinuxApplication/%E8%BF%9B%E7%A8%8B.md) 
+9. [信号](https://github.com/TimChanCHN/LinuxStudy/blob/master/1LinuxApplication/%E4%BF%A1%E5%8F%B7.md) 
+10. [线程](https://github.com/TimChanCHN/LinuxStudy/blob/master/1LinuxApplication/%E7%BA%BF%E7%A8%8B.md) 
+11. [网络编程](https://github.com/TimChanCHN/LinuxStudy/blob/master/1LinuxApplication/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.md) 
+12. [其他（时间获取）](https://github.com/TimChanCHN/LinuxStudy/blob/master/1LinuxApplication/%E5%85%B6%E4%BB%96%EF%BC%88%E6%97%B6%E9%97%B4%E8%8E%B7%E5%8F%96).md) 
 
 ## 2 Linux Driver
 ### 2.1 系统移植
