@@ -128,6 +128,9 @@ if [ -n “$a” ] || [ $a –gt 10]	#在后面的语句中，a在键入回车�
 
 备注： function可以省略
 
+# 11. 字符串处理
+ [字符串特殊处理](https://www.cnblogs.com/nul1/p/11558569.html)
+
 
 
 
