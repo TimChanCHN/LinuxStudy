@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-15 22:58:56
- * @LastEditTime: 2019-09-18 10:39:54
+ * @LastEditTime: 2019-10-22 10:40:08
  * @LastEditors: Please set LastEditors
  -->
 # u-boot移植
@@ -13,6 +13,12 @@
 4. uboot在引导完内核之后，uboot消失，CPU开始执行内核代码。
 5. uboot引导内核的过程是一个不可逆的过程。
 6. 不同厂家芯片的u-boot程序不一样，因此其不具备通用性。
+
+### 内核启动流程
+1. 系统上电--> CPU自身初始化
+2. 加电自检--> 加载内核引导程序
+3. 内核引导 --> 主引导程序、次引导程序
+4. 调用内核
 
 ## 2 u-boot移植
 1. 复制源码包`u-boot-nanopi.tar.bz2`至linux下并解压(压缩包可以删除)；
