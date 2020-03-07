@@ -87,5 +87,3 @@
    patch -p(n) < [补丁包路径] patch_name        #安装补丁
    patch -p(n) -R < [补丁包路径] patch_name     #卸载补丁
    ```
-
-3. 卸载补丁
