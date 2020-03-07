@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-20 19:14:30
- * @LastEditTime: 2019-09-20 20:00:33
+ * @LastEditTime: 2019-10-22 14:27:58
  * @LastEditors: Please set LastEditors
  -->
 # fasync机制
@@ -16,7 +16,7 @@
    ![fasync机制示意图](https://github.com/TimChanCHN/pictures/raw/master/Linux/fasync%E5%8E%9F%E7%90%86.png)
 
 ## 2 fasync机制的实现
-1. 在驱动层钟定义fasync函数，该函数作用是给应用层发送命令，而应用层也调用fasync接口函数，用以实现fasync机制；
+1. 在驱动层钟定义fasync函数，该函数作用是给应用层发送命令，而应用层也调用fasync接口函数，用以实现fa sync机制；
 2. 驱动要发送命令给进程，需要获取进程PID--通过fasync接口函数把PID传递给设备驱动；
 3. 设备驱动通过调用函数`kill_fasync`把信号发送给进程
 
