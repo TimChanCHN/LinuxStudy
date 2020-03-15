@@ -21,7 +21,7 @@
    5. 片选信号--NFCONT,bit1 
 
 ## 2.NandFlash驱动框架以及编码步骤
-1. 见同目录下的文件：nandflash程序框架
+1. 见同目录下的文件：flash程序驱动框架
 2. 程序编写流程
    1. 分配nand_chip结构体
    2. 设置nand_chip结构体内容
