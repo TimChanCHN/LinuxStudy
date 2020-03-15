@@ -1,0 +1,122 @@
+Flash程序驱动框架
+APP(应用程序)	：	open	read	write 
+-----------------------------------------------------------------------------------------
+虚拟文件系统：				VFS(虚拟文件系统)
+-----------------------------------------------------------------------------------------
+		字符设备驱动 	 |       				文件系统(FS):
+			      		|				vfat, jffs2, yaffs2, ext2
+						|---------------------------------------------------------------- 
+						|RamBlock 	| 硬盘 	|					MTD	: 实现对任务的优化						
+						|			|		|--------------------------------------------										
+						|			|		|		  NAND			|		 NOR		
+						|			|		|						|   jedec  | cfi
+						|			|		|						|--------------------		
+						|			|		|   mtd_info:知道发什么  |	mtd_info:知道发什么
+						|			|		|	去实现擦除、读写     |	去实现擦除、读写			
+						|			|		|--------------------------------------------				
+						|			|		|	nand_chip:知道怎么	 |	map_info:知道			
+						|			|		|	命令，地址，数据     |  基地址，位宽
+-----------------------------------------------------------------------------------------
+硬件层：					操作硬件
+
+
+************************************Nand Flash驱动程序框架********************************
+搜索;"S3C24XX NAND Driver"--从kernel启动文件可知
+s3c2410_nand_init		(../drivers/mtd/nand/s3c2410.c)
+	static int s3c24xx_nand_probe(struct platform_device *pdev)
+
+probe函数基本程序框架：
+s3c2410_nand_inithw
+s3c2410_nand_init_chip
+	chip->cmd_ctrl  = s3c2410_nand_hwcontrol;
+	chip->dev_ready = s3c2440_nand_devready;
+	...
+nand_scan_ident
+	nand_set_defaults
+		chip->select_chip = nand_select_chip;
+		...
+	nand_get_flash_type
+		chip->select_chip(mtd, 0);
+		chip->cmdfunc(mtd, NAND_CMD_RESET, -1, -1);
+		chip->cmdfunc(mtd, NAND_CMD_READID, 0x00, -1);
+		*maf_id = chip->read_byte(mtd);
+		*dev_id = chip->read_byte(mtd);
+nand_scan_tail
+	mtd->_erase = nand_erase;
+	mtd->_read = nand_read;
+	mtd->_write = nand_write;
+
+
+s3c2410_nand_add_partition
+	mtd_device_parse_register
+		add_mtd_partitions
+			add_mtd_device
+				device_create					// 此处生成字符设备
+					// mtd_notifiers哪里设置？
+					// register_mtd_user（drivers/mtd/mtdcore.c),被drivers\mtd\mtd_blkdevs.c调用
+				list_for_each_entry(not, &mtd_notifiers, list)
+				not->add(mtd);
+					blktrans_notify_add
+							// blktrans_majors哪里设置？
+							// register_mtd_blktrans（drivers/mtd/mtd_blkdevs.c），drivers\mtd\mtdblock.c,mtdbolck_ro.c调用
+							list_for_each_entry(tr, &blktrans_majors, list)
+							tr->add_mtd(tr, mtd);
+								mtdblock_add_mtd
+									add_mtd_blktrans_dev
+										// 块设备基本操作在此处实现
+										alloc_disk
+										gd->queue = new->rq;		//	new->rq = blk_init_queue(mtd_blktrans_request, &new->queue_lock);
+										add_disk
+
+
+
+
+************************************Nor Flash驱动程序框架********************************
+参考内核程序drivers/mtd/maps/physmap.c
+platform_device_register					// 注册设备端，提供设备信息
+	static struct platform_device physmap_flash = {
+		.resource	= &physmap_flash_resource,			// 提供设备信息
+			static struct resource physmap_flash_resource = {
+				.start		= CONFIG_MTD_PHYSMAP_START,												// 物理地址
+				.end		= CONFIG_MTD_PHYSMAP_START + CONFIG_MTD_PHYSMAP_LEN - 1,				// 位宽信息
+				.flags		= IORESOURCE_MEM,
+			};
+
+platform_driver_register					// 注册驱动端，提供match后的入口函数probe
+	struct map_info：						// 构造map_info结构体
+	do_map_probe							// 选择以jedec还是cfi方式访问
+		get_mtd_chip_driver
+			--chip_drvs_lock					// 在register_mtd_chip_driver中添加到List中
+												// drivers\mtd\chips\cfi_probe.c中调用该函数
+			
+****************************************CFI模式*****************************************************
+			cfi_probe
+				mtd_do_chip_probe
+						cfi = genprobe_ident_chips(map, cp);		// 通用枚举
+							genprobe_new_chip(map, cp, &cfi)
+								cfi_probe_chip						// cp->probe_chip函数指针指向该函数， 进入cfi模式
+									cfi_qry_mode_on					
+											cfi_send_gen_cmd(0xF0, 0, base, map, cfi, cfi->device_type, NULL);		// 发命令
+											cfi_qry_present			// 检查是否能读出QRY， 能读出的话，则会成功进入CFI
+
+****************************************JEDEC模式*****************************************************
+			jedec_chip_probe
+				mtd_do_chip_probe
+					genprobe_ident_chips
+						genprobe_new_chip
+							cp->probe_chip(map, 0, NULL, cfi)		// 指向jedec的指针
+								jedec_probe_chip
+									// 解锁
+									probe_offset1 = cfi_build_cmd_addr(cfi->addr_unlock1, map, cfi);
+									probe_offset2 = cfi_build_cmd_addr(cfi->addr_unlock2, map, cfi);
+									// 获取厂家，设备id
+									cfi->mfr = jedec_read_mfr(map, base, cfi);
+									cfi->id = jedec_read_id(map, base, cfi);
+									// 匹配设备列表，找到对应的nor flash
+									jedec_match( base, map, cfi, &jedec_table[i] )
+
+
+// 分区
+mtd_device_parse_register				// 以下步骤同nandflash，生成nor flash对应的字符设备以及块设备
+
+
