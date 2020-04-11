@@ -66,7 +66,7 @@
       3. -ctime: 查找最近更新的文件，{}是指最近的更新时间 
    
 ## grep
-1. 格式：grep -r "string" path
+1. 格式：grep -r "string" path / grep "string" * -nR
 2. 作用：在路径path中，查找含有"string"的文件
 
 ## date
