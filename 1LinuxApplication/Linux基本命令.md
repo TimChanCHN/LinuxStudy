@@ -58,7 +58,8 @@
 
 ## find
 1. 格式：   find path option  {}
-2. 说明：
+2. 作用：查找文件
+3. 说明：
    1. path: 查找路径
    2. option:
       1. -name: 查找名字，{}跟的是文件名称
@@ -67,7 +68,8 @@
    
 ## grep
 1. 格式：grep -r "string" path / grep "string" * -nR
-2. 作用：在路径path中，查找含有"string"的文件
+2. 作用：在文件中查找字符串
+3. 作用：在路径path中，查找含有"string"的文件
 
 ## date
 1. 查看系统当前时间
