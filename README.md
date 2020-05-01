@@ -6,7 +6,7 @@
  * @LastEditors: Please set LastEditors
  -->
 # LinuxStudy （开发平台RK3399）
-## 1 Linux Application
+## 1 Linux Application  
 
 1. [Linux简要概述](https://github.com/TimChanCHN/LinuxStudy/blob/master/1LinuxApplication/Linux%E7%AE%80%E8%A6%81%E6%A6%82%E8%BF%B0.md)  
 2. [Linux基本命令](https://github.com/TimChanCHN/LinuxStudy/blob/master/1LinuxApplication/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4.md) 
@@ -53,4 +53,4 @@
 1. [设备树](https://github.com/TimChanCHN/LinuxStudy/blob/master/2LinuxDriver/5%E8%AE%BE%E5%A4%87%E6%A0%91%E5%BC%80%E5%8F%91%E3%80%81%E9%A9%B1%E5%8A%A8%E7%A7%BB%E6%A4%8D%E3%80%81%E4%BA%A7%E5%93%81%E5%8F%91%E5%B8%83%E3%80%81%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/1%E8%AE%BE%E5%A4%87%E6%A0%91.md)
 
 # 附录
-1. [SourceInsight使用技巧](https://github.com/TimChanCHN/LinuxStudy/blob/master/%E9%99%84%E5%BD%95/SourceInsight%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7.md)
+1. [SourceInsight使用技巧__](https://github.com/TimChanCHN/LinuxStudy/blob/master/%E9%99%84%E5%BD%95/SourceInsight%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7.md)
