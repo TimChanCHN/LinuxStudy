@@ -6,7 +6,7 @@
  * @LastEditors: Please set LastEditors
  -->
 # LinuxStudy （开发平台RK3399）
-## 1 Linux Application
+## 1 Linux Application  
 
 1. [Linux简要概述](https://github.com/TimChanCHN/LinuxStudy/blob/master/1LinuxApplication/Linux%E7%AE%80%E8%A6%81%E6%A6%82%E8%BF%B0.md)  
 2. [Linux基本命令](https://github.com/TimChanCHN/LinuxStudy/blob/master/1LinuxApplication/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4.md) 
