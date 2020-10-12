@@ -13,6 +13,24 @@
 ## pwd
 ## useradd/passwd
 1. 增加用户，密码
+> su useradd username
+> su passwd username
+
+## groups
+1. 作用:查看当前用户所属的用户组
+> groups
+2. 查看用户组信息可以查看文件:
+> cat /etc/group
+
+## usermod
+1. 作用:对用户组的用户进行管理
+> usermod -G groupA user:把user加入到用户组groupA中，但是会退出其他用户组
+> usermod -a -G groupA user:把user加入到用户组groupA中，但是不会退出其他用户组
+
+## userdel
+1. 作用:删除用户信息
+> userdel user:删除用户，但是账密信息文件不会删除，无法再次新建同名用户
+> userdel -r user:删除用户及其信息文件
    
 ## su
 ## mkdir
